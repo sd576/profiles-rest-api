@@ -65,7 +65,7 @@ class HellowViewSet(viewsets.ViewSet):
         return Response({'message': 'Hello!', 'a_viewset': a_viewset})
 
     def create(self, request):
-        """Create a new help message"""
+        """Create a new hello message"""
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
@@ -97,6 +97,5 @@ class HellowViewSet(viewsets.ViewSet):
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     """Handle creating and updating profiles"""
-    serializer_class =serializer.UserProfileSerializer
+    serializer_class = serializer.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
-    
